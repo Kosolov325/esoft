@@ -14,7 +14,7 @@ py -m venv venv  #Inicializa o ambiente virtual
 cd /venv/Scripts
 activate # ou .\activate caso esteja utilizando o powershell
 cd ../..
-pip install -r requiriments.txt
+pip install -r requirements.txt
 ```
 
 Instale as dependências e ligue o servidor : )
