@@ -1,0 +1,19 @@
+.cadastrar:link{
+    text-decoration: none;
+    color: black;
+}
+
+.cadastrar:visited{
+    text-decoration: none;
+    color: black;
+}
+
+.cadastrar:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.cadastrar:active{
+    text-decoration: none;
+    color: white;
+}

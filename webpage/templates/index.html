@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>ESOFT SISTEMAS</title>
+</head>
+<body>
+    <header class="container-fluid p-1 bg-primary text-white text-center">
+        <h1>Endereços</h1>
+    </header>
+    <main class="container mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>CEP</th>
+                    <th>LOGRADOURO</th>
+                    <th>COMPLEMENTO</th>
+                    <th>BAIRRO</th>
+                    <th>LOCALIDADE</th>
+                    <th>UF</th>
+                    <th>IBGE</th>
+                    <th>GIA</th>
+                    <th>DDD</th>
+                    <th>SIAFI</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for address in addresses %}
+                    <tr>
+                        <td>{{ address.id}}</td>
+                        <td>{{ address.cep }}</td>
+                        <td>{{ address.logradouro }}</td>
+                        <td>{{ address.complemento }}</td>
+                        <td>{{ address.bairro }}</td>
+                        <td>{{ address.localidade }}</td>
+                        <td>{{ address.uf }}</td>
+                        <td>{{ address.ibge }}</td>
+                        <td>{{ address.gia }}</td>
+                        <td>{{ address.ddd }}</td>
+                        <td>{{ address.siafi }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <a href="{% url 'cadastrar' %}"><button type="button" class="btn btn-outline-dark">Cadastrar</button></a>
+            </tfoot>
+        </table>
+    </main>
+</body>
+</html>

@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <title>Cadastrar Endereços</title>
+</head>
+<body>
+    <section class="vh-100" style="background-color: #2779e2;">
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-9">
+              <h1 class="text-white mb-4">Cadastrar Endereços</h1>
+              <div class="card" style="border-radius: 15px;">
+                <div class="card-body">
+                  <div class="row align-items-center pt-4 pb-3">
+                
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">CEP</h6>
+                    </div>
+                    <div class="col-md-3 pe-5">
+                      <input type="text" id="cep" class="form-control form-control-lg" placeholder="00000000"/>
+                    </div>
+                    
+                    <div class="col-md-3 ps-1">
+                      <button type="button" class="btn btn-light" onClick="search()">Buscar</button>
+                    </div>
+                  </div>
+            
+                  <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Logradouro</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                        <input id="logradouro" type="text" class="form-control form-control-lg" placeholder="logradouro" />
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Complemento</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <textarea id="complemento" class="form-control" rows="3" placeholder="complemento"></textarea>
+                    </div>
+                  </div>    
+
+                  <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Bairro</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                        <input id="bairro" type="text" class="form-control form-control-lg" placeholder="bairro" />
+                    </div>
+                  </div>
+                  
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Localidade</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input id="localidade" type="text" class="form-control form-control-lg" placeholder="localidade"/>
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">UF</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input id="uf" type="text" class="form-control form-control-lg" placeholder="unidade federativa"/>
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">IBGE</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input id="ibge" type="text" class="form-control form-control-lg" placeholder="0000000"/>
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">GIA</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input id="gia" type="text" class="form-control form-control-lg" placeholder="0000 (apenas São Paulo*)"/>
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">DDD</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input id="ddd" type="text" class="form-control form-control-lg" placeholder="00"/>
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Siafi</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input id="siafi" type="text" class="form-control form-control-lg" placeholder="0000"/>
+                    </div>
+                  </div>
+
+                  <div class="px-5 py-4">
+                    <button id ="submit" type="submit" class="btn btn-primary btn-lg" onClick="submit()">Cadastrar</button>
+                  </div>
+      
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script type="text/javascript" src="{% static 'scripts/script.js' %}">
+
+      </script>
+</body>
+</html>
