@@ -5,7 +5,6 @@
 Esse projeto utiliza bibliotecas externas:
 - Django
 - Django Rest Framework
-- Psycopg2 (PostgresSQL)
 - etc
 
 ## Installation
