@@ -10,12 +10,12 @@ Esse projeto utiliza bibliotecas externas:
 
 ## Installation
 ``` python
-py -m venv venv  #Inicializa o ambiente virtual
+python -m venv venv  #Inicializa o ambiente virtual
 cd /venv/Scripts
 activate # ou .\activate caso esteja utilizando o powershell
 cd ../..
 pip install -r requirements.txt
-py manage.py runserver
+python manage.py runserver
 ```
 
 Instale as dependências e ligue o servidor : )
