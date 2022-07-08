@@ -1,15 +1,15 @@
 const url = "http://localhost:8000/api/endereços/";
 const api = "https://viacep.com.br/ws/";
 var dataid;
-var logradouro = document.querySelector('#logradouro')
-var complemento = document.querySelector('#complemento')
-var bairro = document.querySelector('#bairro')
-var localidade = document.querySelector('#localidade')
-var uf = document.querySelector('#uf')
-var ibge = document.querySelector('#ibge')
-var gia = document.querySelector('#gia')
-var ddd = document.querySelector('#ddd')
-var siafi = document.querySelector('#siafi')
+var logradouro = document.querySelector('#logradouro');
+var complemento = document.querySelector('#complemento');
+var bairro = document.querySelector('#bairro');
+var localidade = document.querySelector('#localidade');
+var uf = document.querySelector('#uf');
+var ibge = document.querySelector('#ibge');
+var gia = document.querySelector('#gia');
+var ddd = document.querySelector('#ddd');
+var siafi = document.querySelector('#siafi');
 var submitDoc = document.querySelector('#submit');
 var cepWebPage = document.querySelector('#cep');
 
@@ -17,7 +17,7 @@ var cepWebPage = document.querySelector('#cep');
 
 function searchapi(){
     let dados = get();
-
+    cepWebPage.value = cepWebPage.value.replace('-', '');
     async function get() {
         let response = await fetch(api + cepWebPage.value + '/json/', {
           method: "get",
@@ -61,6 +61,7 @@ function search(){
           for(let data in request){
                   let obj = request[data];
                   let cep = obj.cep;
+                  cepWebPage.value = cepWebPage.value.replace('-', '');
                   if (cep == cepWebPage.value){
                       dataid = obj.id;
                       logradouro.value = obj.logradouro;
@@ -72,10 +73,10 @@ function search(){
                       gia.value = obj.gia;
                       ddd.value = obj.ddd;
                       siafi.value = obj.siafi;
-                      return true;
+                      return true;  // Caso exista simplesmente retornar e não pesquisar pela API
                   }
             }
-        searchapi()     
+        searchapi();     
     }
 } 
 
@@ -108,7 +109,7 @@ function put(dataid){
         )
   
       let data = await response.json();
-      location.href="/"
+      location.href="/";
       }
 
 }
@@ -143,16 +144,17 @@ function post(){
     );
 
     let data = await response.json();
-    location.href="/"
+    location.href="/";
     }
 }	
 
 
 function submit(){
+    cepWebPage.value = cepWebPage.value.replace('-', '');
     if (dataid){
-        put(dataid)  
+        put(dataid);
     }
     else{
-        post()
+        post();
     }
 }

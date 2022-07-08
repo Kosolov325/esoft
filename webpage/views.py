@@ -6,7 +6,7 @@ def homeView(request):
     return redirect("index")
 
 def indexView(request):
-    response = requests.get('http://localhost:8000/api/endere%C3%A7os/')
+    response = requests.get('http://localhost:8000/api/endereços/')
     addresses = response.json()
     return render(request, 'index.html', {'addresses': addresses})
 

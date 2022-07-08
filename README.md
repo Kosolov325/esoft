@@ -5,7 +5,6 @@
 Esse projeto utiliza bibliotecas externas:
 - Django
 - Django Rest Framework
-- Psycopg2
 - etc
 
 ## Installation
@@ -20,7 +19,5 @@ pip install -r requiriments.txt
 Instale as dependências e ligue o servidor : )
 
 ## License
-
-UNIPE
 
 **Free Software, Hell Yeah!**
